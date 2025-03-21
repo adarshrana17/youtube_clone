@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+.sidebar-btn{
+    @apply hover:bg-gray-200 py-2 px-3 rounded-lg pl-3 
+}
+.filterbtn{
+    @apply p-2 px-3 rounded-lg bg-gray-100 hover:bg-gray-200 text-lg
+}
+.inp-btn{
+     @apply h-10 w-[250px] pl-2.5 rounded-lg outline-0 border border-gray-300 focus:outline-none
+}
+.label-text{
+  @apply text-xl text-gray-700 font-medium
+}
+.video-header{
+  @apply my-5
+}
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+  }
