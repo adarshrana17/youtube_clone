@@ -58,7 +58,7 @@ function VideoPlayback({ videoDetail }) {
       if (!token) return;
 
       const response = await fetch(
-        `http://localhost:5100/user-channel/${userId}`,
+        `https://youtube-clone-y1gb.onrender.com/user-channel/${userId}`,
         {
           method: "GET",
           headers: {
@@ -253,7 +253,7 @@ function VideoPlayback({ videoDetail }) {
                 {user && user.profileImage ? (
                   <div className="w-12 h-12 bg-blue-500 rounded-full">
                     <img
-                      src={`http://localhost:5100/uploads/${user.profileImage}`}
+                      src={`https://youtube-clone-y1gb.onrender.com/uploads/${user.profileImage}`}
                       alt="Profile"
                       className="w-full h-full rounded-full object-cover"
                     />

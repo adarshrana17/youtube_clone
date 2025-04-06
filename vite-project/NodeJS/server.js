@@ -20,9 +20,20 @@ mongoose
 
 app.use(express.json());
 app.use(cookieParser());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://youtube-clone-eight-lyart.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow frontend access
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );

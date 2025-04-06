@@ -29,7 +29,7 @@ const MyChannel = () => {
         }
 
         const response = await fetch(
-          `http://localhost:5100/user-channel/${userId}`,
+          `https://youtube-clone-y1gb.onrender.com/user-channel/${userId}`,
           {
             method: "GET",
             headers: {
@@ -78,7 +78,7 @@ const MyChannel = () => {
                 <div className="channelBanner">
                   {channel.channelImage ? (
                     <img
-                      src={`http://localhost:5100${channel.channelImage}`}
+                      src={`https://youtube-clone-y1gb.onrender.com${channel.channelImage}`}
                       alt="Channel Banner"
                       className="w-32 h-32 sm:w-40 sm:h-40 md:w-52 md:h-52 object-cover rounded-full"
                     />
