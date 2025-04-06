@@ -37,13 +37,16 @@ function CreateChannel() {
         return;
       }
 
-      const response = await fetch("http://localhost:5100/create-channel", {
-        method: "POST",
-        headers: {
-          Authorization: `JWT ${token}`,
-        },
-        body: formData,
-      });
+      const response = await fetch(
+        "https://youtube-clone-y1gb.onrender.com/create-channel",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `JWT ${token}`,
+          },
+          body: formData,
+        }
+      );
 
       const result = await response.json();
       if (response.ok) {
@@ -68,17 +71,30 @@ function CreateChannel() {
         {/* Image Preview Box */}
         <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full flex items-center justify-center mb-4 overflow-hidden bg-gray-200">
           {preview ? (
-            <img src={preview} alt="Channel Logo" className="w-full h-full object-cover" />
+            <img
+              src={preview}
+              alt="Channel Logo"
+              className="w-full h-full object-cover"
+            />
           ) : (
             <i className="fa-solid fa-circle-user text-6xl md:text-9xl text-blue-400"></i>
           )}
         </div>
 
         {/* Upload Button */}
-        <label htmlFor="channelLogo" className="cursor-pointer text-blue-600 text-lg md:text-xl font-semibold px-4 rounded mb-3 hover:text-blue-700">
+        <label
+          htmlFor="channelLogo"
+          className="cursor-pointer text-blue-600 text-lg md:text-xl font-semibold px-4 rounded mb-3 hover:text-blue-700"
+        >
           Select Picture
         </label>
-        <input type="file" id="channelLogo" className="hidden" accept="image/*" onChange={handleFileChange} />
+        <input
+          type="file"
+          id="channelLogo"
+          className="hidden"
+          accept="image/*"
+          onChange={handleFileChange}
+        />
 
         {/* Channel Name Input */}
         <input
@@ -106,13 +122,18 @@ function CreateChannel() {
               Cancel
             </button>
           </Link>
-          <button onClick={handleSubmit} className="bg-blue-600 text-white py-2 px-5 md:px-6 rounded text-sm md:text-base hover:bg-blue-900">
+          <button
+            onClick={handleSubmit}
+            className="bg-blue-600 text-white py-2 px-5 md:px-6 rounded text-sm md:text-base hover:bg-blue-900"
+          >
             Create Channel
           </button>
         </div>
 
         {/* Success Message */}
-        {message && <p className="mt-3 text-green-500 text-sm md:text-base">{message}</p>}
+        {message && (
+          <p className="mt-3 text-green-500 text-sm md:text-base">{message}</p>
+        )}
       </div>
     </div>
   );
