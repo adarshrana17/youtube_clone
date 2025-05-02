@@ -3,6 +3,9 @@
 ## Overview
 This is a **YouTube Clone** built using the **MERN (MongoDB, Express, React, Node.js) stack**. It allows users to register, log in, create channels, and interact with content through likes and dislikes.
 
+## 🔗 Live Demo
+[Click here to view the live app] (https://youtube-clone-eight-lyart.vercel.app/)
+
 
 ## Features
 User Authentication (JWT-based)  
